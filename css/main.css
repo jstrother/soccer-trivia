@@ -167,4 +167,188 @@ html {
 * {
   border: 1px solid purple; }
 
+header {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+  header::after {
+    clear: both;
+    content: "";
+    display: table; }
+  header h1 {
+    font-size: 3em; }
+  header nav {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 57.35098%;
+    margin-left: 19.19206%; }
+    header nav:last-child {
+      margin-right: 0; }
+    header nav div {
+      display: inline;
+      margin-left: 2em; }
+      header nav div :first-child {
+        margin-left: 0 !important; }
+
+main {
+  text-align: center;
+  margin: 2em 0; }
+  main #questionDiv {
+    display: none; }
+  main #answerDiv {
+    display: none; }
+  main #howToPlay {
+    display: none; }
+  main #welcome {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    main #welcome::after {
+      clear: both;
+      content: "";
+      display: table; }
+    main #welcome .welSize {
+      font-size: 2.5em;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      main #welcome .welSize:last-child {
+        margin-right: 0; }
+    main #welcome #challenge {
+      display: flex;
+      justify-content: space-between; }
+    main #welcome #w1 {
+      margin-bottom: 6em; }
+    main #welcome #w2 {
+      margin: 3em 0; }
+    main #welcome #w3 {
+      margin-top: 6em; }
+  main #questionHeader {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    main #questionHeader::after {
+      clear: both;
+      content: "";
+      display: table; }
+    main #questionHeader div {
+      display: inline; }
+    main #questionHeader #questionAsk {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%;
+      float: left; }
+      main #questionHeader #questionAsk:last-child {
+        margin-right: 0; }
+  main .points {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 14.70196%;
+    float: right; }
+    main .points:last-child {
+      margin-right: 0; }
+  main #choiceDiv {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both; }
+    main #choiceDiv::after {
+      clear: both;
+      content: "";
+      display: table; }
+    main #choiceDiv .choice {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%;
+      margin-left: 17.05961%;
+      margin-top: 2em;
+      margin-bottom: 2em; }
+      main #choiceDiv .choice:last-child {
+        margin-right: 0; }
+      main #choiceDiv .choice:nth-child(2n) {
+        margin-right: 0; }
+      main #choiceDiv .choice:nth-child(2n+1) {
+        clear: left; }
+  main #answerHeader {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    main #answerHeader::after {
+      clear: both;
+      content: "";
+      display: table; }
+    main #answerHeader div {
+      display: inline; }
+    main #answerHeader #correctOrNot {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%;
+      float: left; }
+      main #answerHeader #correctOrNot:last-child {
+        margin-right: 0; }
+  main #answerBlock {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em; }
+    main #answerBlock::after {
+      clear: both;
+      content: "";
+      display: table; }
+    main #answerBlock #answerLetter {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 6.17215%; }
+      main #answerBlock #answerLetter:last-child {
+        margin-right: 0; }
+    main #answerBlock #answerText {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 91.4702%;
+      text-align: left !important; }
+      main #answerBlock #answerText:last-child {
+        margin-right: 0; }
+  main #factoid {
+    clear: both;
+    text-align: left !important;
+    margin: 1em; }
+  main #holderDiv {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em; }
+    main #holderDiv::after {
+      clear: both;
+      content: "";
+      display: table; }
+    main #holderDiv #answerSelect {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%;
+      margin-left: 8.5298%; }
+      main #holderDiv #answerSelect:last-child {
+        margin-right: 0; }
+    main #holderDiv #scorePoints {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%; }
+      main #holderDiv #scorePoints:last-child {
+        margin-right: 0; }
+
+footer {
+  text-align: center; }
+
 /*# sourceMappingURL=main.css.map */

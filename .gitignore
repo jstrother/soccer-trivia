@@ -1,5 +1,5 @@
 css/bourbon
 css/base
 css/neat
-.map
+*.map
 css/.sass-cache

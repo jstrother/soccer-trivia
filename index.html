@@ -11,40 +11,72 @@
         <h1>Soccer Trivia</h1>
         <nav>
             <div id="howTo">How to Play</div>
-            <div id="questionNumber">3 of 25</div>
-            <div id="totalScore">10 points</div>
+            <div id="questionNumber"><span>3</span> of 25</div>
+            <div id="totalScore"><span>10</span> points</div>
             <div id="newGame">New Game</div>
         </nav>
     </header>
     <main>
+        <div id="welcome">
+            <div id="challenge">
+                <div id="w1" class="welSize">Think you know your stuff?</div>
+                <div id="w2" class="welSize">Try this soccer quiz on for size!</div>
+                <div id="w3" class="welSize">Can you get all 25?</div>
+            </div>
+            <button id="beginGame" type="button">Begin Game!</button>
+        </div>
         <div id="questionDiv">
-            <div id="questionAsk">Which team was once known as "The Busby Babes"?</div>
-            <div class="points">5 points</div>
-            <div class="choice">
-                <p>A</p>
-                <div class="choiceText">Manchester United</div>
+            <div id="questionHeader">
+                <div id="questionAsk">Q: <span>Which team was once known as "The Busby Babes"?</span></div>
+                <div class="points">5 points</div>
             </div>
-            <div class="choice">
-                <p>B</p>
-                <div class="choiceText">Liverpool</div>
-            </div>
-            <div class="choice">
-                <p>C</p>
-                <div class="choiceText">Arsenal</div>
-            </div>
-            <div class="choice">
-                <p>D</p>
-                <div class="choiceText">Newcastle</div>
+            <div id="choiceDiv">
+                <div class="choice">
+                    <p>A</p>
+                    <div id="choiceTextA">Manchester United</div>
+                </div>
+                <div class="choice">
+                    <p>B</p>
+                    <div id="choiceTextB">Liverpool</div>
+                </div>
+                <div class="choice">
+                    <p>C</p>
+                    <div id="choiceTextC">Arsenal</div>
+                </div>
+                <div class="choice">
+                    <p>D</p>
+                    <div id="choiceTextD">Newcastle</div>
+                </div>
             </div>
             <button id="submit" type="button">Submit</button>
         </div>
-        <div>
-            <div id="correctOrNot">Correct!</div>
-            <div class="points">5 points <span>added</span></div>
-            <div id="answerLetter">A</div>
-            <div id="answerText">Manchester United</div>
-            <div id="factoid">The term, coined by Manchester Evening News journalist Frank Nicklin in 1951, usually refers to the players who won the league championship in seasons 1955–56 and 1956–57 with an average age of 21 and 22 respectively.</div>
+        <div id="answerDiv">
+            <div id="answerHeader">
+                <div id="correctOrNot">Correct!</div>
+                <div class="points">5 points added</div>
+            </div>
+            <div id="answerBlock">
+                <div id="answerLetter">A</div>
+                <div id="answerText">Manchester United</div>
+            </div>
+            <div id="factoid">The Busby Babes, coined by Manchester Evening News journalist Frank Nicklin in 1951, usually refers to the players who won the league championship in seasons 1955–56 and 1956–57 with an average age of 21 and 22 respectively.</div>
             <button id="nextQuestion" type="button">Next Question</button>
+        </div>
+        <div id="howToPlay">
+            <div id="holderDiv">
+                <div id="answerSelect">
+                    <h3>Selecting your Answer</h3>
+                    <p>1. Select your answer by clicking on it or pressing its letter on the keyboard.</p>
+                    <p>2. Click Submit.</p>
+                </div>
+                <br />
+                <div id="scorePoints">
+                    <h3>Scoring</h3>
+                    <p>1. Earn points with correct answers.</p>
+                    <p>2. Lose points with wrong answers.</p>
+                </div>
+            </div>
+            <button id="returnGame" type="button">Return to Game</button>
         </div>
     </main>
     <footer>

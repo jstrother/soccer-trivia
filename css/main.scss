@@ -6,3 +6,121 @@
 * {
     border: $testBorder;
 }
+header {
+    @include outer-container;
+    text-align: center;
+    h1 {
+        font-size: 3em;
+    }
+    nav{
+        @include span-columns(7);
+        @include shift(2.25);
+        div {
+            display: inline;
+            margin-left: 2em;
+            :first-child {
+                margin-left: 0 !important;
+            }
+        }
+    }
+}
+main {
+    #questionDiv {
+        display: none;
+    }
+    #answerDiv {
+        display: none;
+    }
+    #howToPlay {
+        display: none;
+    }
+    #welcome {
+        @include outer-container;
+        .welSize {
+            font-size: 2.5em;
+            @include span-columns(4);
+        }
+        #challenge {
+            display: flex;
+            justify-content: space-between;
+        }
+        #w1 {
+            margin-bottom: 6em;
+        }
+        #w2 {
+            margin: 3em 0;
+        }
+        #w3 {
+            margin-top: 6em;
+        }
+    }
+    text-align: center;
+    margin: 2em 0;
+    #questionHeader {
+        @include outer-container;
+        div {
+            display: inline;
+        }
+        #questionAsk {
+            @include span-columns(6);
+            float: left;
+        }
+    }
+    .points {
+        @include span-columns(2);
+        float: right;
+    }
+    #choiceDiv {
+    @include outer-container;
+    clear: both;
+        .choice {
+            @include span-columns(3);
+            @include omega(2n);
+            @include shift(2);
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+    }
+    #answerHeader {
+        @include outer-container;
+        div {
+            display: inline;
+        }
+        #correctOrNot {
+            @include span-columns(3);
+            float: left;
+        }
+    }
+    #answerBlock {
+        @include outer-container;
+        margin-top: 1em;
+        #answerLetter {
+            @include span-columns(1);
+        }
+        #answerText {
+            @include span-columns(11);
+            text-align: left !important;
+        }
+    }
+    #factoid {
+        clear: both;
+        text-align: left !important;
+        margin: 1em;
+    }
+    #holderDiv {
+        @include outer-container;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+        #answerSelect {
+            @include span-columns(3);
+            @include shift(1);
+        }
+        #scorePoints {
+            @include span-columns(3);
+        }
+    }
+}
+footer {
+    text-align: center;
+}
