@@ -4,11 +4,30 @@
 @import "myVariables";
 
 * {
-    border: $testBorder;
+    // border: $testBorder;
+}
+body {
+    background: $bodyColor;
+    color: $textColor;
+}
+a {
+    text-decoration: underline;
+    color: white;
+    :visited {
+        color: purple;
+    }
+    :hover {
+        color: inherit;
+        font-weight: bold;
+    }
+}
+button {
+    background: $buttonColor;
 }
 header {
     @include outer-container;
     text-align: center;
+    background: $headerColor;
     h1 {
         font-size: 3em;
     }
@@ -22,47 +41,44 @@ header {
                 margin-left: 0 !important;
             }
         }
+        #howTo, #newGame {
+            cursor: pointer;
+        }
     }
 }
 main {
-    #questionDiv {
-        display: none;
-    }
-    #answerDiv {
-        display: none;
-    }
-    #howToPlay {
-        display: none;
-    }
+    text-align: center;
+    margin: 2em 0;
     #welcome {
         @include outer-container;
         .welSize {
             font-size: 2.5em;
             @include span-columns(4);
+            background: darken($challengeColor, 10%);
         }
         #challenge {
             display: flex;
             justify-content: space-between;
+            background: $challengeColor url('../images/soccer-ball.jpg') 0 0/67.9em 22.75em no-repeat;
         }
         #w1 {
             margin-bottom: 6em;
         }
         #w2 {
-            margin: 3em 0;
+            margin: 3em 0 3em -0.5em;
         }
         #w3 {
             margin-top: 6em;
         }
     }
-    text-align: center;
-    margin: 2em 0;
-    #questionHeader {
+    .questionHeader {
         @include outer-container;
+        background: darken($bodyColor, 10%);
         div {
             display: inline;
         }
-        #questionAsk {
-            @include span-columns(6);
+        .questionAsk {
+            @include span-columns(8);
             float: left;
         }
     }
@@ -70,7 +86,7 @@ main {
         @include span-columns(2);
         float: right;
     }
-    #choiceDiv {
+    .choiceDiv {
     @include outer-container;
     clear: both;
         .choice {
@@ -79,35 +95,33 @@ main {
             @include shift(2);
             margin-top: 2em;
             margin-bottom: 2em;
+            background: darken($bodyColor, 10%);
+            padding-top: 0.2em;
+            input {
+                margin-top: 0.2em;
+            }
         }
     }
-    #answerHeader {
+    .answerHeader {
         @include outer-container;
+        padding: 0.5em;
+        background: darken($bodyColor, 10%);
         div {
             display: inline;
         }
-        #correctOrNot {
+        .correctOrNot {
             @include span-columns(3);
             float: left;
         }
     }
-    #answerBlock {
-        @include outer-container;
-        margin-top: 1em;
-        #answerLetter {
-            @include span-columns(1);
-        }
-        #answerText {
-            @include span-columns(11);
-            text-align: left !important;
-        }
-    }
-    #factoid {
+    .factoid {
         clear: both;
         text-align: left !important;
         margin: 1em;
+        padding: 0.5em;
+        background: darken($bodyColor, 10%);
     }
-    #holderDiv {
+    #holder {
         @include outer-container;
         display: flex;
         justify-content: space-between;
@@ -115,12 +129,17 @@ main {
         #answerSelect {
             @include span-columns(3);
             @include shift(1);
+            padding: 0.5em;
+            background: darken($bodyColor, 10%);
         }
         #scorePoints {
             @include span-columns(3);
+            padding: 0.5em;
+            background: darken($bodyColor, 10%);
         }
     }
 }
 footer {
     text-align: center;
+    background: darken($bodyColor, 10%);
 }

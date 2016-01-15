@@ -164,14 +164,28 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-* {
-  border: 1px solid purple; }
+body {
+  background: #337ab7;
+  color: white; }
+
+a {
+  text-decoration: underline;
+  color: white; }
+  a :visited {
+    color: purple; }
+  a :hover {
+    color: inherit;
+    font-weight: bold; }
+
+button {
+  background: black; }
 
 header {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
-  text-align: center; }
+  text-align: center;
+  background: #4f93ce; }
   header::after {
     clear: both;
     content: "";
@@ -191,16 +205,12 @@ header {
       margin-left: 2em; }
       header nav div :first-child {
         margin-left: 0 !important; }
+    header nav #howTo, header nav #newGame {
+      cursor: pointer; }
 
 main {
   text-align: center;
   margin: 2em 0; }
-  main #questionDiv {
-    display: none; }
-  main #answerDiv {
-    display: none; }
-  main #howToPlay {
-    display: none; }
   main #welcome {
     max-width: 68em;
     margin-left: auto;
@@ -214,35 +224,38 @@ main {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 31.76157%; }
+      width: 31.76157%;
+      background: #2e3d47; }
       main #welcome .welSize:last-child {
         margin-right: 0; }
     main #welcome #challenge {
       display: flex;
-      justify-content: space-between; }
+      justify-content: space-between;
+      background: #425766 url("../images/soccer-ball.jpg") 0 0/67.9em 22.75em no-repeat; }
     main #welcome #w1 {
       margin-bottom: 6em; }
     main #welcome #w2 {
-      margin: 3em 0; }
+      margin: 3em 0 3em -0.5em; }
     main #welcome #w3 {
       margin-top: 6em; }
-  main #questionHeader {
+  main .questionHeader {
     max-width: 68em;
     margin-left: auto;
-    margin-right: auto; }
-    main #questionHeader::after {
+    margin-right: auto;
+    background: #285f8f; }
+    main .questionHeader::after {
       clear: both;
       content: "";
       display: table; }
-    main #questionHeader div {
+    main .questionHeader div {
       display: inline; }
-    main #questionHeader #questionAsk {
+    main .questionHeader .questionAsk {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 48.82117%;
+      width: 65.88078%;
       float: left; }
-      main #questionHeader #questionAsk:last-child {
+      main .questionHeader .questionAsk:last-child {
         margin-right: 0; }
   main .points {
     float: left;
@@ -252,103 +265,92 @@ main {
     float: right; }
     main .points:last-child {
       margin-right: 0; }
-  main #choiceDiv {
+  main .choiceDiv {
     max-width: 68em;
     margin-left: auto;
     margin-right: auto;
     clear: both; }
-    main #choiceDiv::after {
+    main .choiceDiv::after {
       clear: both;
       content: "";
       display: table; }
-    main #choiceDiv .choice {
+    main .choiceDiv .choice {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 23.23176%;
       margin-left: 17.05961%;
       margin-top: 2em;
-      margin-bottom: 2em; }
-      main #choiceDiv .choice:last-child {
+      margin-bottom: 2em;
+      background: #285f8f;
+      padding-top: 0.2em; }
+      main .choiceDiv .choice:last-child {
         margin-right: 0; }
-      main #choiceDiv .choice:nth-child(2n) {
+      main .choiceDiv .choice:nth-child(2n) {
         margin-right: 0; }
-      main #choiceDiv .choice:nth-child(2n+1) {
+      main .choiceDiv .choice:nth-child(2n+1) {
         clear: left; }
-  main #answerHeader {
+      main .choiceDiv .choice input {
+        margin-top: 0.2em; }
+  main .answerHeader {
     max-width: 68em;
     margin-left: auto;
-    margin-right: auto; }
-    main #answerHeader::after {
+    margin-right: auto;
+    padding: 0.5em;
+    background: #285f8f; }
+    main .answerHeader::after {
       clear: both;
       content: "";
       display: table; }
-    main #answerHeader div {
+    main .answerHeader div {
       display: inline; }
-    main #answerHeader #correctOrNot {
+    main .answerHeader .correctOrNot {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 23.23176%;
       float: left; }
-      main #answerHeader #correctOrNot:last-child {
+      main .answerHeader .correctOrNot:last-child {
         margin-right: 0; }
-  main #answerBlock {
-    max-width: 68em;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1em; }
-    main #answerBlock::after {
-      clear: both;
-      content: "";
-      display: table; }
-    main #answerBlock #answerLetter {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 6.17215%; }
-      main #answerBlock #answerLetter:last-child {
-        margin-right: 0; }
-    main #answerBlock #answerText {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 91.4702%;
-      text-align: left !important; }
-      main #answerBlock #answerText:last-child {
-        margin-right: 0; }
-  main #factoid {
+  main .factoid {
     clear: both;
     text-align: left !important;
-    margin: 1em; }
-  main #holderDiv {
+    margin: 1em;
+    padding: 0.5em;
+    background: #285f8f; }
+  main #holder {
     max-width: 68em;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     justify-content: space-between;
     margin-bottom: 1em; }
-    main #holderDiv::after {
+    main #holder::after {
       clear: both;
       content: "";
       display: table; }
-    main #holderDiv #answerSelect {
+    main #holder #answerSelect {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 23.23176%;
-      margin-left: 8.5298%; }
-      main #holderDiv #answerSelect:last-child {
+      margin-left: 8.5298%;
+      padding: 0.5em;
+      background: #285f8f; }
+      main #holder #answerSelect:last-child {
         margin-right: 0; }
-    main #holderDiv #scorePoints {
+    main #holder #scorePoints {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 23.23176%; }
-      main #holderDiv #scorePoints:last-child {
+      width: 23.23176%;
+      padding: 0.5em;
+      background: #285f8f; }
+      main #holder #scorePoints:last-child {
         margin-right: 0; }
 
 footer {
-  text-align: center; }
+  text-align: center;
+  background: #285f8f; }
 
 /*# sourceMappingURL=main.css.map */
