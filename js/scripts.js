@@ -1,16 +1,8 @@
 $(document).ready(function() {
-    var numQuestion = 1;
+    var numQuestion = 0;
     var totalPoints = 0;
-    var question = $('#question' + numQuestion);
-    var answer = $('#answer' + numQuestion);
-    var correctOrNot = answer.find('.correctOrNot');
-    var addedOrNot = answer.find('.addedOrNot');
-    // hiding unneeded sections at start of game
-    $('#howToPlay').hide();
-    $('#questions').hide();
-    $('#answers').hide();
-    $('#results').hide();
-    $('nav').hide();
+    var correctAnswers = 0;
+    reset();
     // opening and closing #howToPlay
     $('#howTo').click(function(e) {
         e.preventDefault();
@@ -25,11 +17,12 @@ $(document).ready(function() {
     // beginning a game
     $('#beginGame').click(function(e) {
         e.preventDefault();
+        numQuestion++;
         $('nav').show();
         $('#welcome').hide();
         $('#questions').show();
         $('.question').hide();
-        question.show();
+        $('#question' + numQuestion).show();
         $('#questionNumber span').text(numQuestion);
         $('#totalScore span').text(totalPoints);
     });
@@ -37,30 +30,77 @@ $(document).ready(function() {
     $('#submit').click(function(e) {
         e.preventDefault();
         var correct;
-        var points = parseInt(question.data('points'));
-        var correctAnswer = parseInt(question.data('ca'));
-        var selectedAnswer = parseInt(question.find('input[type="radio"]:checked').val());
+        var question = $('#question' + numQuestion);
+        var points = parseInt(question.data('points'), 0);
+        var correctAnswer = parseInt(question.data('ca'), 0);
+        var selectedAnswer = parseInt(question.find('input[type="radio"]:checked').val(), 0);
+        var correctOrNot = $('#answer' + numQuestion).find('.correctOrNot');
+        var addedOrNot = $('#answer' + numQuestion).find('.addedOrNot');
         if (selectedAnswer == correctAnswer){
             totalPoints += points;
             correct = 'Correct!';
+            correctOrNot.text(correct);
+            addedOrNot.text('added!');
+            correctAnswers++;
             $('#totalScore span').text(totalPoints);
             $('#questions').hide();
             $('#answers').show();
             $('.answer').hide();
-            answer.show();
-            correctOrNot.text(correct);
-            addedOrNot.text('added!');
+            $('#answer' + numQuestion).show();
         } else {
             totalPoints -= points;
             correct = 'Incorrect';
+            correctOrNot.text(correct);
+            addedOrNot.text('subtracted!');
             $('#totalScore span').text(totalPoints);
             $('#questions').hide();
             $('#answers').show();
             $('.answer').hide();
-            answer.show();
-            correctOrNot.text(correct);
-            addedOrNot.text('subtracted!');
+            $('#answer' + numQuestion).show();
         }
     });
     // moving to the next question
-})
+    $('#nextQuestion').click(function(e) {
+        e.preventDefault();
+        numQuestion++;
+        $('#answers').hide();
+        $('#questions').show();
+        $('.question').hide();
+        $('#question' + numQuestion).show();
+        $('#questionNumber span').text(numQuestion);
+        if (numQuestion == 4) {
+            $('#nextQuestion').text('Final Question');
+        }
+        if (numQuestion == 5) {
+            $('#nextQuestion').text('See Your Results!').click(function(e) {
+                e.preventDefault();
+                $('#questions').hide();
+                $('#answers').hide();
+                $('#results').show();
+                $('#questionNumber span').text(5);
+                $('#correctAnswers').text(correctAnswers);
+                $('#points').text(totalPoints);
+                numQuestion = 0;
+            });
+        }
+    });
+    // resetting for a new game
+    $('#playAgain').click(function(e) {
+        e.preventDefault();
+        reset();
+        numQuestion = 0;
+        totalPoints = 0;
+        correctAnswers = 0;
+        $('nextQuestion').text('Next Question');
+    });
+});
+function reset() {
+    // hiding unneeded sections at start/restart of game
+    $('#howToPlay').hide();
+    $('#questions').hide();
+    $('#answers').hide();
+    $('#results').hide();
+    $('nav').hide();
+    $('#welcome').show();
+    $('input[type="radio"]').prop('checked', false);
+}
