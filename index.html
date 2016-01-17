@@ -10,10 +10,8 @@
     <header>
         <h1>Soccer Trivia</h1>
         <nav>
-            <div id="howTo">How to Play</div>
-            <div id="questionNumber"><span>3</span> of 5</div>
-            <div id="totalScore"><span>10</span> points</div>
-            <div id="newGame">New Game</div>
+            <li id="questionNumber"><span></span> of 5</li>
+            <li id="totalScore"><span></span> points</li>
         </nav>
     </header>
     <main>
@@ -23,10 +21,11 @@
                 <div id="w2" class="welSize">Try this soccer quiz on for size!</div>
                 <div id="w3" class="welSize">Can you get all 5?</div>
             </div>
+            <button id="howTo" type="button">How to Play</button>
             <button id="beginGame" type="button">Begin Game!</button>
         </section>
         <section id="questions">
-            <div id="question1" data-points=5 data-ca=0>
+            <div id="question1" class="question" data-points=5 data-ca=0>
                 <div class="questionHeader">
                     <div class="questionAsk">Q: Which team was once known as "The Busby Babes"?</div>
                     <div class="points">5 points</div>
@@ -50,7 +49,7 @@
                     </div>
                 </div>
             </div>
-            <div id="question2" data-points=5 data-ca=2>
+            <div id="question2" class="question" data-points=5 data-ca=2>
                 <div class="questionHeader">
                     <div class="questionAsk">Q: What is the highest recorded score in an official soccer match?</div>
                     <div class="points">5 points</div>
@@ -74,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            <div id="question3" data-points=5 data-ca=1>
+            <div id="question3" class="question" data-points=5 data-ca=1>
                 <div class="questionHeader">
                     <div class="questionAsk">Q: Who earned the fastest red card in history, and how quick was it?</div>
                     <div class="points">5 points</div>
@@ -98,7 +97,7 @@
                     </div>
                 </div>
             </div>
-            <div id="question4" data-points=5 data-ca=0>
+            <div id="question4" class="question" data-points=5 data-ca=0>
                 <div class="questionHeader">
                     <div class="questionAsk">True or False: Diego Maradona has his own religion, made by his fans.</div>
                     <div class="points">5 points</div>
@@ -114,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            <div id="question5" data-points=5 data-ca=0>
+            <div id="question5" class="question" data-points=5 data-ca=0>
                 <div class="questionHeader">
                     <div class="questionAsk">True or False: Soccer was one of the causes of a war betweeen El Salvador and Honduras.</div>
                     <div class="points">5 points</div>
@@ -132,51 +131,58 @@
             </div>
             <button id="submit" type="button">Submit</button>
         </section>
-        <section id="answer">
-            <div id="answer1">
+        <section id="answers">
+            <div id="answer1" class="answer">
                 <div class="answerHeader">
                     <div class="correctOrNot"></div>
-                    <div class="points">5 points added</div>
+                    <div class="points">5 points <span class="addedOrNot"></span></div>
                 </div>
                 <div class="answerBlock">Manchester United</div>
                 <div class="factoid">The Busby Babes, coined by Manchester Evening News journalist Frank Nicklin in 1951, usually refers to the players who won the league championship in seasons 1955–56 and 1956–57 with an average age of 21 and 22 respectively. <p><a href="https://en.wikipedia.org/wiki/Busby_Babes" target="_new">Learn More.</a></p></div>
             </div>
-            <div id="answer2">
+            <div id="answer2" class="answer">
                 <div class="answerHeader">
                     <div class="correctOrNot"></div>
-                    <div class="points">5 points added</div>
+                    <div class="points">5 points <span class="addedOrNot"></span></div>
                 </div>
                 <div class="answerBlock">AS Adema 149:0 SO l'Emyrne, 2002</div>
                 <div class="factoid">This was an association football match played on 31 October 2002 between two teams in Antananarivo, Madagascar. It holds the world record for the highest scoreline, recognized by The Guinness Book of Records. SO l'Emyrne intentionally lost the game against their arch-rivals AS Adema in protest over refereeing decisions that had gone against them during a four-team playoff tournament. <p><a href="https://en.wikipedia.org/wiki/AS_Adema_149%E2%80%930_SO_l%27Emyrne" target="_new">Learn More.</a></p></div>
             </div>
-            <div id="answer3">
+            <div id="answer3" class="answer">
                 <div class="answerHeader">
                     <div class="correctOrNot"></div>
-                    <div class="points">5 points added</div>
+                    <div class="points">5 points <span class="addedOrNot"></span></div>
                 </div>
                 <div class="answerBlock">Lee Todd of Cross Farm Park Celtic, 2 seconds</div>
                 <div class="factoid">Interestingly, the fastest red card on record was not due to a dangerous tackle or physical aggression. Instead, Lee Todd was famously sent off for swearing straight after hearing the referee’s whistle. Standing next to the referee, Lee Todd reacted to his shock at hearing the starting whistle by shouting “F#*k me, that was loud!”. The referee rather oddly deemed it red card worthy and sent the striker straight back to the changing rooms. <p><a href="http://www.theguardian.com/football/2009/jan/07/1" target="_new">Learn More.</a></p></div>
             </div>
-            <div id="answer4">
+            <div id="answer4" class="answer">
                 <div class="answerHeader">
                     <div class="correctOrNot"></div>
-                    <div class="points">5 points added</div>
+                    <div class="points">5 points <span class="addedOrNot"></span></div>
                 </div>
                 <div class="answerBlock">True</div>
                 <div class="factoid">The Iglesia Maradoniana (English: Church of Maradona; literally Maradonian Church ) is a religion, created by fans of the retired Argentine football player Diego Maradona, who they believe to be the best player of all time. <p><a href="https://en.wikipedia.org/wiki/Iglesia_Maradoniana" target="_new">Learn More.</a></p></div>
             </div>
-            <div id="answer5">
+            <div id="answer5" class="answer">
                 <div class="answerHeader">
                     <div class="correctOrNot"></div>
-                    <div class="points">5 points added</div>
+                    <div class="points">5 points <span class="addedOrNot"></span></div>
                 </div>
                 <div class="answerBlock">True</div>
                 <div class="factoid">The Football War (Spanish: La guerra del fútbol), also known as the Soccer War or 100 Hour War, was a brief war fought by El Salvador and Honduras in 1969. The cause of the war was economic in nature, namely issues concerning immigration from El Salvador to Honduras.[1] These existing tensions between the two countries coincided with rioting during a 1970 FIFA World Cup qualifier. <p><a href="https://en.wikipedia.org/wiki/Football_War" target="_new">Learn More.</a></p></div>
             </div>
             <button id="nextQuestion" type="button">Next Question</button>
         </section>
+        <section id="results">
+            <div class="holder">
+                <p id="resultsText">You correctly answered <span id="correctAnswers"></span> of 5 and scored <span id="points"></span> points!</p>
+            </div>
+            <br>
+            <button id="playAgain" type="button">Play Again?</button>
+        </section>
         <section id="howToPlay">
-            <div id="holder">
+            <div class="holder">
                 <div id="answerSelect">
                     <h3>Selecting your Answer</h3>
                     <p>1. Select your answer by clicking on it's radio button.</p>

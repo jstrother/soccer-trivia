@@ -185,7 +185,8 @@ header {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  background: #4f93ce; }
+  background: #4f93ce;
+  padding-top: 0.5em; }
   header::after {
     clear: both;
     content: "";
@@ -197,16 +198,17 @@ header {
     display: block;
     margin-right: 2.35765%;
     width: 57.35098%;
-    margin-left: 19.19206%; }
+    margin-left: 19.19206%;
+    background: #285f8f;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
     header nav:last-child {
       margin-right: 0; }
-    header nav div {
+    header nav li {
+      list-style-type: none;
       display: inline;
       margin-left: 2em; }
-      header nav div :first-child {
-        margin-left: 0 !important; }
-    header nav #howTo, header nav #newGame {
-      cursor: pointer; }
 
 main {
   text-align: center;
@@ -237,7 +239,9 @@ main {
     main #welcome #w2 {
       margin: 3em 0 3em -0.5em; }
     main #welcome #w3 {
-      margin-top: 6em; }
+      margin-top: 6em;
+      padding-top: 0.6em;
+      padding-bottom: -0.6em; }
   main .questionHeader {
     max-width: 68em;
     margin-left: auto;
@@ -318,36 +322,50 @@ main {
     margin: 1em;
     padding: 0.5em;
     background: #285f8f; }
-  main #holder {
+  main .holder {
     max-width: 68em;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     justify-content: space-between;
     margin-bottom: 1em; }
-    main #holder::after {
+    main .holder::after {
       clear: both;
       content: "";
       display: table; }
-    main #holder #answerSelect {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 23.23176%;
-      margin-left: 8.5298%;
+  main #results {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    main #results::after {
+      clear: both;
+      content: "";
+      display: table; }
+    main #results #resultsText {
+      margin-left: 31.98677%;
       padding: 0.5em;
-      background: #285f8f; }
-      main #holder #answerSelect:last-child {
-        margin-right: 0; }
-    main #holder #scorePoints {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 23.23176%;
-      padding: 0.5em;
-      background: #285f8f; }
-      main #holder #scorePoints:last-child {
-        margin-right: 0; }
+      text-align: center;
+      background: #285f8f;
+      margin-bottom: -0.75em; }
+  main #answerSelect {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    margin-left: 8.5298%;
+    padding: 0.5em;
+    background: #285f8f; }
+    main #answerSelect:last-child {
+      margin-right: 0; }
+  main #scorePoints {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    padding: 0.5em;
+    background: #285f8f; }
+    main #scorePoints:last-child {
+      margin-right: 0; }
 
 footer {
   text-align: center;

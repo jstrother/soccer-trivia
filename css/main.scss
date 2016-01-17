@@ -28,21 +28,21 @@ header {
     @include outer-container;
     text-align: center;
     background: $headerColor;
+    padding-top: 0.5em;
     h1 {
         font-size: 3em;
     }
     nav{
         @include span-columns(7);
         @include shift(2.25);
-        div {
+        background: darken($bodyColor, 10%);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        li {
+            list-style-type: none;
             display: inline;
             margin-left: 2em;
-            :first-child {
-                margin-left: 0 !important;
-            }
-        }
-        #howTo, #newGame {
-            cursor: pointer;
         }
     }
 }
@@ -69,6 +69,8 @@ main {
         }
         #w3 {
             margin-top: 6em;
+            padding-top: $w3Center;
+            padding-bottom: -$w3Center;
         }
     }
     .questionHeader {
@@ -121,22 +123,32 @@ main {
         padding: 0.5em;
         background: darken($bodyColor, 10%);
     }
-    #holder {
+    .holder {
         @include outer-container;
         display: flex;
         justify-content: space-between;
         margin-bottom: 1em;
-        #answerSelect {
-            @include span-columns(3);
-            @include shift(1);
+    }
+    #results {
+        @include outer-container;
+        #resultsText {
+            @include shift(3.75);
             padding: 0.5em;
+            text-align: center;
             background: darken($bodyColor, 10%);
+            margin-bottom: -0.75em;
         }
-        #scorePoints {
-            @include span-columns(3);
-            padding: 0.5em;
-            background: darken($bodyColor, 10%);
-        }
+    }
+    #answerSelect {
+        @include span-columns(3);
+        @include shift(1);
+        padding: 0.5em;
+        background: darken($bodyColor, 10%);
+    }
+    #scorePoints {
+        @include span-columns(3);
+        padding: 0.5em;
+        background: darken($bodyColor, 10%);
     }
 }
 footer {
