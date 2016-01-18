@@ -3,7 +3,7 @@ $(document).ready(function() {
     var totalPoints = 0;
     var correctAnswers = 0;
     reset();
-    // opening and closing #howToPlay
+    
     $('#howTo').click(function(e) {
         e.preventDefault();
         $('#welcome').hide();
@@ -12,7 +12,7 @@ $(document).ready(function() {
     $('#returnGame').click(function(e) {
         e.preventDefault();
         $('#howToPlay').hide();
-        $('#welcome').show();    
+        $('#welcome').show();
     });
     // beginning a game
     $('#beginGame').click(function(e) {
@@ -72,7 +72,8 @@ $(document).ready(function() {
             $('#nextQuestion').text('Final Question');
         }
         if (numQuestion == 5) {
-            $('#nextQuestion').text('See Your Results!').click(function(e) {
+            $('#nextQuestion').hide();
+            $('#resultsShow').show().click(function(e) {
                 e.preventDefault();
                 $('#questions').hide();
                 $('#answers').hide();
@@ -91,7 +92,6 @@ $(document).ready(function() {
         numQuestion = 0;
         totalPoints = 0;
         correctAnswers = 0;
-        $('nextQuestion').text('Next Question');
     });
 });
 function reset() {
@@ -103,4 +103,6 @@ function reset() {
     $('nav').hide();
     $('#welcome').show();
     $('input[type="radio"]').prop('checked', false);
+    $('#resultsShow').hide();
+    $('#nextQuestion').show().text('Next Question');
 }
